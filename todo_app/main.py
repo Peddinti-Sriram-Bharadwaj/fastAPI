@@ -8,7 +8,6 @@ app = FastAPI()
 #pydantic model
 
 class Todo(BaseModel):
-    id: int
     title: str
     completed: bool = False
 
@@ -19,8 +18,10 @@ todo_list: List[Todo] = []
 
 @app.post("/todos")
 def create_todo(todo: Todo):
-    todo_list.append(todo)
-    return {"message" : "To-do created", "todo": todo}
+    new_id = 1 if not todo_list else todo_list[-1].id + 1
+    new_todo = Todo(id = new_id, title = todo.title, completed = todo.completed)
+    todo_list.append(new_todo)
+    return {"message" : "To-do created", "todo": new_todo}
 
 @app.get("/todos", response_model = List[Todo])
 def get_todos():
