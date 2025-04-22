@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+fastapi-env/
+
+# VSCode settings (if you're using VSCode)
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Python virtualenv metadata
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+
+# Environment variables and secrets
+.env
+
+# Pytest / coverage reports
+htmlcov/
+.coverage
+.cache
+.pytest_cache/
+
+# MyPy / type checker
+.mypy_cache/
+
+# Docker
+*.pid
+*.db
+docker-compose.override.yml
+
+# Optional: Jupyter / notebooks
+.ipynb_checkpoints/
